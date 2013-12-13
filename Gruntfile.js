@@ -19,6 +19,33 @@ module.exports = function(grunt) {
       }
     },
 
+    browserify: {
+      jquery: {
+        src: ['bower_components/jquery/jquery.js'],
+        dest: 'dist/release/vendor/jquery.js',
+        options: {
+          transform: ['debowerify', 'deamdify'],
+          standalone: 'jquery'
+        }
+      },
+      backbone: {
+        src: ['bower_components/backbone/backbone.js'],
+        dest: 'dist/release/vendor/backbone.js',
+        options: {
+          transform: ['debowerify', 'deamdify'],
+          standalone: 'backbone'
+        }
+      },
+      underscore: {
+        src: ['bower_components/underscore/underscore.js'],
+        dest: 'dist/release/vendor/underscore.js',
+        options: {
+          transform: ['debowerify', 'deamdify'],
+          standalone: "underscore"
+        }
+      },
+    },
+
     clean: {
       dist: [
         'dist/*'
@@ -87,6 +114,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-browserify');
 
   grunt.registerTask('build', ['clean', 'requirejs', 'copy']);
   grunt.registerTask('server', [ 'livereload-start', 'connect', 'regarde' ]);
@@ -95,5 +123,3 @@ module.exports = function(grunt) {
   grunt.registerTask('default', 'server');
 
 };
-
-
