@@ -1,5 +1,4 @@
 {
-
   "name": "example-app",
   "title": "Example App for WidgeLoader",
   "version": "0.1.0",
@@ -23,6 +22,11 @@
     "grunt-contrib-livereload": "~0.1.1",
     "grunt-regarde": "~0.1.1",
     "grunt-shell": "~0.2.0",
-    "grunt-contrib-copy": "~0.4.0"
+    "grunt-contrib-copy": "~0.4.0",
+    "deamdify": "~0.1.1",
+    "debowerify": "~0.5.0",
+    "browserify": "~3.2.0",
+    "bower": "~1.2.8",
+    "grunt-browserify": "git://github.com/jmreidy/grunt-browserify"
   }
 }
