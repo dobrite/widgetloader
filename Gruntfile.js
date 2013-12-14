@@ -15,7 +15,6 @@ module.exports = function(grunt) {
           mainConfigFile: "app/js/app.js",
           out: "dist/release/js/app.js",
           name: "app",
-          shim: {}, //overwrite app.js shim
           baseUrl: "app/js/",
           paths: {
             "jquery": "../../dist/release/vendor/jquery",
