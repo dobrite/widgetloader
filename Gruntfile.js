@@ -14,7 +14,14 @@ module.exports = function(grunt) {
         options: {
           mainConfigFile: "app/js/app.js",
           out: "dist/release/js/app.js",
-          name: "app"
+          name: "app",
+          shim: {}, //overwrite app.js shim
+          baseUrl: "app/js/",
+          paths: {
+            "jquery": "../../dist/release/vendor/jquery",
+            "backbone": "../../dist/release/vendor/backbone",
+            "underscore": "../../dist/release/vendor/underscore",
+          },
         }
       }
     },
@@ -25,7 +32,7 @@ module.exports = function(grunt) {
         dest: 'dist/release/vendor/jquery.js',
         options: {
           transform: ['debowerify', 'deamdify'],
-          standalone: 'jquery'
+          standalone: 'jq'
         }
       },
       backbone: {
@@ -33,7 +40,7 @@ module.exports = function(grunt) {
         dest: 'dist/release/vendor/backbone.js',
         options: {
           transform: ['debowerify', 'deamdify'],
-          standalone: 'backbone'
+          standalone: 'bb'
         }
       },
       underscore: {
@@ -41,14 +48,14 @@ module.exports = function(grunt) {
         dest: 'dist/release/vendor/underscore.js',
         options: {
           transform: ['debowerify', 'deamdify'],
-          standalone: "underscore"
+          standalone: "us"
         }
       },
     },
 
     clean: {
       dist: [
-        'dist/*'
+        'dist/release/js/*'
       ]
     },
 
