@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         dest: 'dist/release/vendor/jquery.js',
         options: {
           transform: ['debowerify', 'deamdify'],
-          standalone: 'jq'
+          standalone: 'jquery'
         }
       },
       backbone: {
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
         dest: 'dist/release/vendor/backbone.js',
         options: {
           transform: ['debowerify', 'deamdify'],
-          standalone: 'bb'
+          standalone: 'backbone'
         }
       },
       underscore: {
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         dest: 'dist/release/vendor/underscore.js',
         options: {
           transform: ['debowerify', 'deamdify'],
-          standalone: "us"
+          standalone: "underscore"
         }
       },
     },
